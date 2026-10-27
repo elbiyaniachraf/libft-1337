@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   libft.h                                           :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: ael-biya <marvin@42.fr0>                  #+#  +:+       +#+         */
+/*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 10:34:50 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/18 12:42:19 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/27 12:24:26 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 size_t	ft_strlen(const char *s);
 int		ft_isalpha(int c);
