@@ -6,9 +6,11 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/23 14:16:52 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/25 23:07:55 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 13:50:27 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	word_count(char const *s, char c)
 {

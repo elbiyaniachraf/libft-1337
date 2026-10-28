@@ -6,7 +6,7 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/27 11:33:27 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/27 12:24:49 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 13:50:48 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst || !new)
+		return ;
 	new->next = *lst;
 	*lst = new;
 }

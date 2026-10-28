@@ -6,12 +6,11 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/15 16:23:33 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/25 23:05:22 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 13:52:36 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_bzero(void *s, size_t n)
 {

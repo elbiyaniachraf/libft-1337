@@ -6,11 +6,11 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/24 10:41:56 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/24 10:44:40 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 13:46:44 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned char int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*result;
 	unsigned int	i;

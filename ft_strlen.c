@@ -6,12 +6,11 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/12 18:00:45 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/21 18:32:29 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 13:53:44 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {
