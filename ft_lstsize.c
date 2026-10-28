@@ -6,9 +6,11 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/27 12:47:00 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/27 13:43:09 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 14:50:10 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 unsigned int	ft_lstsize(t_list *lst)
 {

@@ -6,9 +6,11 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/21 18:48:34 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/25 23:06:54 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 14:49:46 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

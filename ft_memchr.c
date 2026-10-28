@@ -6,9 +6,11 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 17:45:16 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/16 17:52:34 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 14:49:07 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

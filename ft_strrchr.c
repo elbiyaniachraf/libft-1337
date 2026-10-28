@@ -6,7 +6,7 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 15:37:35 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/28 13:43:27 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 15:01:02 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last;
+	size_t			i;
+	unsigned char	ch;
+	char			*last;
 
+	if (!s)
+		return (NULL);
+	i = 0;
 	last = NULL;
+	ch = (unsigned char) c;
 	while (1)
 	{
-		if (*s == (char) c)
-			last = s;
-		if (*s == '\0')
+		if ((unsigned char) s[i] == ch)
+			last = (char *) & s[i];
+		if (s[i] == '\0')
 			break ;
-		s++;
+		i++;
 	}
-	return ((char *) last);
+	return (last);
 }

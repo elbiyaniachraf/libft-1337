@@ -6,7 +6,7 @@
 /*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/28 10:41:02 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/28 13:51:19 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/28 15:07:00 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
+	if (lst == NULL || del == NULL)
 		return ;
-	if (del)
-		del(lst->content);
+	del(lst->content);
 	free(lst);
 }
