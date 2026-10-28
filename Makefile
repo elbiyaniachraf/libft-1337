@@ -8,7 +8,7 @@ SRCS = ft_isalpha.c \
        ft_isalnum.c \
        ft_strlen.c
 
-OBJS = $(SRCS:.c=.o)
+(OBJS) = $(SRCS:.c=.o)
 
 all: $(NAME)
 

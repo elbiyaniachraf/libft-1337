@@ -29,3 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	return ((int) p1[i] - (int) p2[i]);
 }
+int main ()
+{
+	printf
+}

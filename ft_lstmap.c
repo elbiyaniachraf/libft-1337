@@ -9,8 +9,8 @@
 /*   Updated: 2026/10/28 13:30:31 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
-
-t_list * ft_lstmap(t_list * lst, void * (*f)(void *),
+#include   "libft.h"
+t_list  *ft_lstmap(t_list * lst, void * (*f)(void *),
 	void	(*del)(void *))
 {
 	t_list	*new_list;
