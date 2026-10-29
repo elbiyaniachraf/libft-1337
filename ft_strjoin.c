@@ -3,29 +3,30 @@
 /*                                                       :::      ::::::::    */
 /*   ft_strjoin.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
+/*   By: ael-biya <ael-biya@student.1337.ma>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/21 18:48:34 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/28 14:49:46 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/29 11:24:15 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;
 	char	*join;
-	
-	if (!s1 || !s2)
-	return (ft_strdup(""));
-	if(!s1)
+
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (!s1)
 		return (ft_strdup(s2));
-	if(!s2)
-		return(ft_strdup(s1));
+	if (!s2)
+		return (ft_strdup(s1));
 	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!join)
-	return (NULL);
+		return (NULL);
 	i = 0;
 	while (s1[i])
 	{

@@ -3,15 +3,16 @@
 /*                                                       :::      ::::::::    */
 /*   ft_lstmap.c                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
+/*   By: ael-biya <ael-biya@student.1337.ma>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/28 13:30:25 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/28 13:30:31 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/29 11:23:22 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
-#include   "libft.h"
-t_list  *ft_lstmap(t_list * lst, void * (*f)(void *),
-	void	(*del)(void *))
+
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;

@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   ft_memcmp.c                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: ael-biya <marvin@42.fr>                   #+#  +:+       +#+         */
+/*   By: ael-biya <ael-biya@student.1337.ma>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 17:56:00 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/28 14:49:34 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/10/29 11:23:37 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n == i)
 		return (0);
 	return ((int) p1[i] - (int) p2[i]);
-}
-int main ()
-{
-	printf
 }
