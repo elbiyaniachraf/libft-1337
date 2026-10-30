@@ -14,31 +14,26 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
-	char	*join;
+	size_t	len1;
+	size_t	len2;
+	size_t	len_total;
+	char	*joined;
 
-	if (!s1 && !s2)
-		return (ft_strdup(""));
-	if (!s1)
+	len1 = 0;
+	len2 = 0;
+	if (!s1 && s2)
 		return (ft_strdup(s2));
-	if (!s2)
+	if (s1 && !s2)
 		return (ft_strdup(s1));
-	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!join)
+	if (!s1 && !s2)
 		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		join[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j])
-	{
-		join[i + j] = s2[j];
-		j++;
-	}
-	join[i + j] = '\0';
-	return (join);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	len_total = len1 + len2 + 1;
+	joined = malloc(len_total);
+	if (!joined)
+		return (NULL);
+	ft_strlcpy(joined, s1, len_total);
+	ft_strlcat(joined, s2, len_total);
+	return (joined);
 }

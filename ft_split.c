@@ -51,7 +51,10 @@ static char	*get_word(char const *s, int start, int end)
 static void	free_split(char **result, int j)
 {
 	while (j > 0)
-		free(result[--j]);
+	{
+		j--;
+		free(result[j]);
+	}
 	free(result);
 }
 

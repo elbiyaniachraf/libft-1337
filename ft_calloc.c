@@ -24,8 +24,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	p = malloc(total);
 	if (!p)
 		return (NULL);
-	if (nmemb == 0 || size == 0)
-		return (p);
 	i = 0;
 	while (i < total)
 		p[i++] = 0;
