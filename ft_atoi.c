@@ -14,7 +14,7 @@
 
 static int	check_overflow(long result, int digit, int sign)
 {
-	if (sign == 1 && result > (LONG_MAX - digit) / 10)
+	if (sign == 1 && result > (INT_MAX - digit) / 10)
 		return (1);
 	if (sign == -1 && result > (LONG_MAX - digit) / 10)
 		return (1);
