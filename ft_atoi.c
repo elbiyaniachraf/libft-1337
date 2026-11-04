@@ -3,43 +3,39 @@
 /*                                                       :::      ::::::::    */
 /*   ft_atoi.c                                         :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: ael-biya <ael-biya@student.1337.ma>       #+#  +:+       +#+         */
+/*   By: ael-biya <marvin@42.fr0>                  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 13:56:33 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/29 11:48:37 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/11/04 20:16:09 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_overflow(long result, int digit, int sign)
-{
-	if (sign == 1 && result > (INT_MAX - digit) / 10)
-		return (1);
-	if (sign == -1 && result > (LONG_MAX - digit) / 10)
-		return (1);
-	return (0);
-}
-
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		sign;
-	long	result;
+	long	reslt;
 
 	i = 0;
 	sign = 1;
-	result = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	reslt = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
-			sign = -1;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (check_overflow(result, str[i] - '0', sign))
-			return (0);
-		result = result * 10 + str[i++] - '0';
+		if (nptr[i++] == '-')
+			sign = -1;
 	}
-	return ((int)(result * sign));
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		if (reslt > (LONG_MAX - (nptr[i] - '0')) / 10 && sign == 1)
+			return ((int) LONG_MAX);
+		if (reslt > (LONG_MAX - (nptr[i] - '0')) / 10 && sign == -1)
+			return ((int) LONG_MIN);
+		reslt = reslt * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return ((int)(reslt * sign));
 }

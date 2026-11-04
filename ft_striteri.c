@@ -3,14 +3,19 @@
 /*                                                       :::      ::::::::    */
 /*   ft_striteri.c                                     :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: ael-biya <ael-biya@student.1337.ma>       #+#  +:+       +#+         */
+/*   By: ael-biya <marvin@42.fr0>                  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/25 22:55:56 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/10/29 11:24:13 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/11/04 20:10:52 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	upper(unsigned int a, char *str)
+{
+	*str = ft_toupper(*str) + a;
+}
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
