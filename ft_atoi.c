@@ -12,29 +12,39 @@
 
 #include "libft.h"
 
+static int	checkov(int digit, long number, int sign)
+{
+	if (sign == 1 && number > (LONG_MAX - digit) / 10)
+		return (-1);
+	if (sign == -1 && number > (LONG_MAX - digit) / 10)
+		return (0);
+	return (1);
+}
+
 int	ft_atoi(const char *nptr)
 {
+	int		i;
 	int		sign;
-	long	result;
+	int		digit;
+	long	number;
 
+	i = 0;
+	number = 0;
 	sign = 1;
-	result = 0;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (*nptr++ == '-')
+		if (nptr[i] == '-')
 			sign = -1;
+		i++;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (result > (LONG_MAX - (*nptr - '0')) / 10)
-		{
-			if (sign > 0)
-				return (-1);
-			return (0);
-		}
-		result = result * 10 + (*nptr++ - '0');
+		digit = nptr[i++] - '0';
+		if (checkov(digit, number, sign) != 1)
+			return (checkov(digit, number, sign));
+		number = number * 10 + digit;
 	}
-	return ((int)(result * sign));
+	return (number * sign);
 }
