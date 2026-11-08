@@ -3,16 +3,16 @@
 /*                                                       :::      ::::::::    */
 /*   ft_atoi.c                                         :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: ael-biya <marvin@42.fr0>                  #+#  +:+       +#+         */
+/*   By: ael-biya <ael-biya@student.1337.ma>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 13:56:33 by ael-biya         #+#    #+#              */
-/*   Updated: 2026/11/05 15:55:42 by ael-biya        ###   ########.fr        */
+/*   Updated: 2026/11/08 09:46:05 by ael-biya        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	checkov(int digit, long number, int sign)
+static int	check_over(int digit, long number, int sign)
 {
 	if (sign == 1 && number > (LONG_MAX - digit) / 10)
 		return (-1);
@@ -42,8 +42,8 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		digit = nptr[i++] - '0';
-		if (checkov(digit, number, sign) != 1)
-			return (checkov(digit, number, sign));
+		if (check_over(digit, number, sign) != 1)
+			return (check_over(digit, number, sign));
 		number = number * 10 + digit;
 	}
 	return (number * sign);

@@ -58,7 +58,7 @@ static void	free_split(char **result, int j)
 	free(result);
 }
 
-static int	fill_split(char **result, char const *s, char c)
+static int	split_words(char **result, char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -91,7 +91,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		count;
-	int		fill;
+	int		split;
 
 	if (!s)
 		return (NULL);
@@ -99,8 +99,8 @@ char	**ft_split(char const *s, char c)
 	result = malloc(sizeof(char *) * (count + 1));
 	if (!result)
 		return (NULL);
-	fill = fill_split(result, s, c);
-	if (fill == 0)
+	split = split_words(result, s, c);
+	if (split == 0)
 		return (NULL);
 	return (result);
 }
