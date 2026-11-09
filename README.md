@@ -2,13 +2,17 @@
 
 # Description
 
-Libft is a project from the 42 curriculum. The goal is to create my own C library by reimplementing several standard C library functions and developing additional functions that can be reused in future C projects.
+Libft is the first project in the 42 curriculum. The goal of this project is to create my own C library by rewriting several functions from the standard C library and developing additional functions.
 
-Through this project, I learned more about how common C functions work internally, how to manage memory, and how to manipulate strings and data structures. It also helped me improve my understanding of pointers, memory allocation, and the way C handles data.
+The project is divided into three parts. The first part focuses on rewriting existing C functions that work with characters, memory, strings, and numbers. The second part introduces additional functions for creating, modifying, and handling strings, as well as displaying characters, strings, and numbers. The third part focuses on linked lists, with functions to create, add, delete, and manage list elements.
 
-The library is divided into three main parts, covering standard library functions, additional utility functions, and linked-list manipulation.
+Throughout this project, I learned how these functions work by implementing them myself, handling memory allocation, working with pointers, and testing different cases.
+
+The final result is a reusable library called `libft.a`, which contains these functions and can be included in future C projects to avoid rewriting the same code.
 
 # Instructions
+
+### Compilation
 
 To compile the library, run:
 
@@ -16,27 +20,19 @@ To compile the library, run:
 make
 ```
 
-This will create the `libft.a` static library.
+This creates the `libft.a` library file.
 
-To remove the object files:
-
-```bash
-make clean
-```
-
-To remove the object files and the library:
+Other available commands:
 
 ```bash
-make fclean
+make clean   # Remove object files
+make fclean  # Remove object files and the library
+make re      # Recompile the library
 ```
 
-To rebuild the library:
+### Using the library
 
-```bash
-make re
-```
-
-To use the library in a C project, include the header:
+Include the header file in your C file:
 
 ```c
 #include "libft.h"
@@ -45,44 +41,47 @@ To use the library in a C project, include the header:
 Compile your program with the library:
 
 ```bash
-cc main.c -L. -lft
+cc main.c -L. -lft -o program
 ```
 
 # Library Description
 
-The library is divided into three parts:
+The library contains the following functions:
 
-## Part 1 – Libc Functions
+### Part 1 - Libc Functions
 
-This part focuses on recreating functions from the standard C library (libc), using the `ft_` prefix for their names. The goal is to reproduce the original functions while respecting their expected behavior and prototypes.
+This part contains my own versions of existing C functions.
 
-It includes functions for character checking and conversion, such as `ft_isalpha`, `ft_isdigit`, and `ft_toupper`, as well as functions for working with strings, such as `ft_strlen`, `ft_strchr`, and `ft_strncmp`.
+- **Character checks:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`.
+- **Memory operations:** `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`.
+- **String operations:** `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`.
+- **Character conversion:** `ft_toupper`, `ft_tolower`.
+- **Number conversion:** `ft_atoi`.
 
-It also covers memory manipulation functions like `ft_memset`, `ft_memcpy`, `ft_memmove`, and `ft_memcmp`, along with functions for memory allocation and string duplication, such as `ft_calloc` and `ft_strdup`.
+### Part 2 - Additional Functions
 
-## Part 2 – Additional Functions
+This part contains additional functions for working with strings, characters, and output.
 
-This part introduces functions that extend the functionality of the library. These functions are either not included in the standard C library or provide different functionality.
+- **String operations:** `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`.
+- **Number conversion:** `ft_itoa`.
+- **String iteration:** `ft_strmapi`, `ft_striteri`.
+- **Output functions:** `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`.
 
-It includes string manipulation functions such as `ft_substr`, `ft_strjoin`, `ft_strtrim`, and `ft_split`, which allow creating, combining, trimming, and splitting strings.
+### Part 3 - Linked Lists
 
-It also includes functions for converting data, such as `ft_itoa`, and functions that apply custom operations to strings, such as `ft_strmapi` and `ft_striteri`.
+This part contains functions for creating and working with linked lists.
 
-Finally, this part introduces functions for writing characters, strings, and numbers to a specific file descriptor using `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, and `ft_putnbr_fd`.
+- `ft_lstnew`: Creates a new node.
+- `ft_lstadd_front`: Adds a node at the beginning of the list.
+- `ft_lstsize`: Counts the number of nodes.
+- `ft_lstlast`: Returns the last node.
+- `ft_lstadd_back`: Adds a node at the end of the list.
+- `ft_lstdelone`: Deletes one node.
+- `ft_lstclear`: Deletes the entire list.
+- `ft_lstiter`: Applies a function to each node.
+- `ft_lstmap`: Creates a new list by applying a function to each node.
 
-## Part 3 – Linked Lists
-
-This part focuses on working with linked lists, a data structure made up of nodes connected through pointers. Each node contains a `content` field, which can store different types of data, and a `next` pointer, which points to the following node.
-
-The implementation starts with `ft_lstnew`, which creates and initializes a new node. Other functions allow adding nodes at the beginning or end of a list, retrieving the last node, and counting the total number of nodes.
-
-It also includes functions for managing and manipulating lists, such as `ft_lstdelone` and `ft_lstclear` for freeing nodes and their content, and `ft_lstiter` for applying a function to each node.
-
-Finally, `ft_lstmap` creates a new list by applying a given function to the content of each node in an existing list.
-
-Together, these functions provide basic tools for creating, traversing, modifying, and managing linked lists.
-
-# Resources
+### References
 
 The following resources were used during the project:
 
@@ -92,15 +91,15 @@ The following resources were used during the project:
 - Makefile Tutorial: https://makefiletutorial.com/
 - Linux man-pages – libc(7): https://man7.org/linux/man-pages/man7/libc.7.html
 
-## AI Usage
+These resources were used to understand the original C functions and their behavior.
 
-I used AI as a learning tool throughout this project. It helped me understand how functions work, get explanations of C concepts, and go deeper into different parts of Libft.
+### AI Usage
 
-I also used it to:
+AI was used as a learning tool during this project:
 
-- Understand code and the reasons behind certain instructions.
-- Find other possible cases that I might have missed.
-- Think about edge cases and improve my tests.
-- Understand concepts that were not clear to me.
-- Discover details and possible problems that I might not have noticed on my own.
-- Review my code and help me understand potential errors.
+- To understand C concepts and how the original functions work.
+- To get explanations about pointers, memory allocation, and linked lists.
+- To check possible test cases and edge cases.
+- To review parts of the code and understand possible errors.
+
+All explanations and suggestions were reviewed to improve my understanding of the functions and their implementation.
